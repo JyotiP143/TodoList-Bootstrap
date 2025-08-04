@@ -6,7 +6,7 @@ const TodoItems = ({ todo, onDelete }) => {
       <p>{todo.desc}</p>
       <button
         type="button"
-        classNameName="btn btn-danger "
+        className="btn btn-danger "
         onClick={() => {
           onDelete(todo);
         }}

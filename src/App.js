@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import AddItems from "./component/addItems";
 import Footer from "./component/footer";
 import Navbar from "./component/navbar";
 import Todos from "./component/todos";
@@ -11,6 +12,17 @@ function App() {
       })
     );
     console.log("delete todos", todo);
+  };
+
+  const addItem = (title, desc) => {
+    console.log("add ITEMS", title, desc);
+    let sno = todos[todos.length - 1].sno + 1;
+    const mytodo = {
+      sno: sno,
+      title: title,
+      desc: desc,
+    };
+    setTodos([...todos , mytodo])
   };
   const [todos, setTodos] = useState([
     {
@@ -32,8 +44,9 @@ function App() {
   return (
     <>
       <Navbar name="TodoList" searchop={true} />
+      <AddItems addItems={addItem} />
       <Todos todos={todos} onDelete={onDelete} />
-      <Footer/>
+      <Footer />
     </>
   );
 }

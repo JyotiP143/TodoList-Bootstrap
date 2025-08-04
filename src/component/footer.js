@@ -1,7 +1,7 @@
 
 const Footer = () => {
     let footer ={
-      position :"absolute",
+      position :"relative",
       top:"90vh",
       width:"100%",
 
